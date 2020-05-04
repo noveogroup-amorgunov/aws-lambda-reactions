@@ -1,4 +1,10 @@
-import { APIGatewayEvent } from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+
+export type HttpEventRequest<T = null> = Omit<APIGatewayProxyEvent, 'pathParameters'> & {
+    pathParameters: T
+}
+
+export type HttpResponse = Promise<APIGatewayProxyResult>;
 
 export enum PostReactionName {
     Shocked = 'shocked',
@@ -16,8 +22,4 @@ export type PostReaction = {
 export type Post = {
     id: string;
     reactions: PostReaction[];
-}
-
-export type HttpEvent<T = null> = APIGatewayEvent & {
-    pathParameters: T
 }

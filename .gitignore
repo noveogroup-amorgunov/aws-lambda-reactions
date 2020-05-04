@@ -2,3 +2,4 @@
 .dynamodb
 node_modules
 .idea
+.build

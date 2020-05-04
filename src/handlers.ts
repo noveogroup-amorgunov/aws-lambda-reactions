@@ -1,7 +1,7 @@
 import { Dynamo } from './dynamo';
 import { catchError } from './middlewares';
 import { isValidReactionId, isValidSlug, assert, isValidBody } from './validators';
-import { HttpEvent, Post, PostReactionName } from './types';
+import { HttpEventRequest, HttpResponse, Post, PostReactionName } from './types';
 import { prepareReactions, respondJson } from './helpers';
 
 type Params = {
@@ -13,7 +13,7 @@ type Body = {
     testSourceIp?: string;
 };
 
-const getReactions = catchError(async function(event: HttpEvent<Params>) {
+const getReactions = catchError(async function(event: HttpEventRequest<Params>): HttpResponse {
     const { slug } = event.pathParameters;
 
     assert(isValidSlug(slug), 'INVALID_SLUG');
@@ -24,7 +24,7 @@ const getReactions = catchError(async function(event: HttpEvent<Params>) {
     return respondJson(prepareReactions(reactions));
 });
 
-const setReaction = catchError(async function(event: HttpEvent<Params>) {
+const setReaction = catchError(async function(event: HttpEventRequest<Params>) {
     const { slug } = event.pathParameters;
 
     assert(isValidBody(event.body), 'INVALID_BODY');

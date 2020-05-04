@@ -8,8 +8,8 @@
     "logs:set-reaction": "sls logs --function setReaction -t",
     "logs:get-reactions": "sls logs --function getReactions -t",
     "deploy": "sls deploy",
-    "lint": "eslint .",
-    "test": "NODE_ENV=test NODE_PATH=. jest tests/**/*.spec.js"
+    "lint": "eslint src/**/*.ts",
+    "test": "NODE_ENV=test NODE_PATH=. jest"
   },
   "keywords": [],
   "author": "Alexander Morgunov <fxl@list.ru>",
