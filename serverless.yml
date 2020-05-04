@@ -35,14 +35,14 @@ provider:
 
 functions:
   getReactions:
-    handler: handler.getReactions
+    handler: src/handlers.getReactions
     events:
       - http:
           path: /posts/{slug}/likes
           method: get
           cors: true
   setReaction:
-    handler: handler.setReaction
+    handler: src/handlers.setReaction
     events:
       - http:
           path: /posts/{slug}/likes
