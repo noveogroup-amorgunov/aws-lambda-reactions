@@ -32,7 +32,7 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "aws-sdk": "2.663.0"
+    "aws-sdk": "2.814.0"
   },
   "eslintConfig": {
     "extends": "iddqd/node",
