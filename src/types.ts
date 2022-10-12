@@ -12,6 +12,8 @@ export enum PostReactionName {
     Like = 'like',
     Dislike = 'dislike',
     Rage = 'rage',
+    Party = 'party',
+    PartyPopper = 'partyPopper',
 }
 
 export type PostReaction = {
