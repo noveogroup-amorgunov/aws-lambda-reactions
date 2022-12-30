@@ -31,7 +31,7 @@
     "prettier": "2.7.1",
     "serverless": "3.23.0",
     "serverless-dotenv-plugin": "4.0.2",
-    "serverless-dynamodb-local": "0.2.40",
+    "serverless-dynamodb-local": "1.0.2",
     "serverless-offline": "11.1.1",
     "serverless-plugin-typescript": "2.1.4",
     "ts-jest": "29.0.3",
